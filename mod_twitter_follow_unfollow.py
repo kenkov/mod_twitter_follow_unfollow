@@ -47,7 +47,7 @@ class ModTwitterFollowUnfollow(Mod):
                 "users/show", {"user_id": user_id}
             ))[0]["screen_name"]
 
-    def is_utterance_needed(
+    def can_utter(
         self,
         message: dict,
         master: dict
