@@ -31,16 +31,10 @@ class ModTwitterFollowUnfollow(Mod):
         )
 
     def get_friends(self):
-        return sum(
-            [cursor["ids"] for cursor in self.api.request('friends/ids')],
-            []
-        )
+        return [item for item in self.api.request('friends/ids')]
 
     def get_followers(self):
-        return sum(
-            [cursor["ids"] for cursor in self.api.request('followers/ids')],
-            []
-        )
+        return [item for item in self.api.request('followers/ids')]
 
     def get_screen_name(self, user_id: int):
             return list(self.api.request(
